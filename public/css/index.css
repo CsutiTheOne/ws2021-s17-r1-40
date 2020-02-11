@@ -9,7 +9,7 @@
 /* It'd be better to find something like parameter passing idk
 /* font colors*/
 .green {
-    color: #5dd782;
+    color: #5dd782 !important;
 }
 .greenDark {
     color: #49b56a;
@@ -44,4 +44,19 @@
 }
 .bg-white {
     background-color: #ffffff;
+}
+
+.banner {
+    background-image: url("../img/shanghai_park_main.png");
+    /* Full height */
+    height: 500px;
+    width: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body {
+    min-height: 1000px;
 }

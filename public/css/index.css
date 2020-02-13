@@ -18,6 +18,43 @@
     --grayLight: #eeeeee;
     --white: #ffffff;
 }
+.green {
+    color: var(--green) !important;
+}
+.greenDark {
+    color: var(--greenDark) !important;
+}
+.greenLight {
+    color: var(--greenLight) !important;
+}
+.gray {
+    color: var(--gray) !important;
+}
+.grayLight {
+    color: var(--grayLight) !important;
+}
+.white {
+    color: var(--white) !important;
+}
+.bg-green {
+    background-color: var(--green);
+}
+.bg-greenDark {
+    background-color: var(--greenDark);
+}
+.bg-greenLight {
+    background-color: var(--greenLight);
+}
+.bg-gray {
+    background-color: var(--gray);
+}
+.bg-grayLight {
+    background-color: var(--grayLight);
+}
+.bg-white {
+    background-color: var(--white);
+}
+
 body {
     min-height: 2000px;
     font-family: arial-narrow;
@@ -28,6 +65,7 @@ body {
 /* header area */
 .fakeBackground {
     position: fixed;
+    z-index: 9998;
     width: 100%;
     height: 100px;
     background-color: var(--white);
@@ -44,6 +82,7 @@ nav.navbar {
     top: -0;
     left: 0;
     right: 0;
+    z-index: 9999;
 }
 .navbar-brand  {
     position: relative;
@@ -89,7 +128,6 @@ nav.navbar {
     position: relative;
     top: 100px;
     z-index: -10;
-    border-bottom: 1px solid black;
 }
 .parallax {
     position: absolute;
@@ -113,29 +151,41 @@ nav.navbar {
     text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
-
+/* actual content */
+#actualContent {
+    margin-top: 20vh;
+}
+.content {
+    color: var(--gray);
+}
+.content h1 {
+    font-size: 34px;
+    color: var(--green);
+}
+.btn.bg-greenDark:active {
+    background-color: var(--greenLight) !important;
+}
 /* trash but may use later 
 
 /* It'd be better to find something like parameter passing idk
 /* font colors
 .green {
-    color: var(--green);
+    color: var(--green) !important;
 }
 .greenDark {
-    color: var(--greenDark);
+    color: var(--greenDark) !important;
 }
 .greenLight {
-    color: var(--greenLight);
+    color: var(--greenLight) !important;
 }
 .gray {
-    color: var(--gray);
+    color: var(--gray) !important;
 }
 .grayLight {
-    color: var(--grayLight);
+    color: var(--grayLight) !important;
 }
 .white {
-    color: var(--white);
+    color: var(--white) !important;
 }
 /* bg colors 
 .bg-green {

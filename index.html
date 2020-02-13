@@ -15,13 +15,20 @@
         <!-- navigation bar and header -->
         <!-- actually, I'm not sure from the task description if it should or allowed 
         to be a fixed navbar, but I found it more a conveniant sollution :p-->
-        <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <div class="fakeBackground">
+            <div class="blackRow d-none d-md-block text-right">
+                <h1>AHA</h1>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
-                <img src="public/img/shanghai_park_logo.png" class="img-fluid navbar-brand" width="100px" height="auto" alt="Shanghai Park">
+                <div class="navbar-brand">
+                    <img src="public/img/shanghai_park_logo.png" class="img-fluid" width="150px" height="auto" alt="Shanghai Park">
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse row navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav green">
                         <li class="nav-item active">
                             <a class="nav-link" href="#">The House</span></a>

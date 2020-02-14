@@ -153,7 +153,7 @@ nav.navbar {
 }
 /* actual content */
 #actualContent {
-    margin-top: 20vh;
+    padding-top: 20vh;
 }
 .content {
     color: var(--gray);
@@ -165,7 +165,27 @@ nav.navbar {
 .btn.bg-greenDark:active {
     background-color: var(--greenLight) !important;
 }
-/* trash but may use later 
+/* Gallery part */
+.images {
+    height: 200px;
+}
+.image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(0.7);
+}
+.image:hover {
+    width: 105%;
+    height: 105%;
+    top: -2.5%
+    left: -2.5%
+    z-index: 997;
+}
+
+
+
+/* trash but may use later
 
 /* It'd be better to find something like parameter passing idk
 /* font colors
@@ -187,7 +207,7 @@ nav.navbar {
 .white {
     color: var(--white) !important;
 }
-/* bg colors 
+/* bg colors
 .bg-green {
     background-color: var(--green);
 }

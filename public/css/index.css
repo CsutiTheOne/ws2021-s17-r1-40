@@ -152,7 +152,7 @@ nav.navbar {
     background-color: rgba(0, 0, 0, 0.5);
 }
 /* ___actual content___ */
-#actualContent {
+.firstContent {
     padding-top: 20vh;
 }
 .content {

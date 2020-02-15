@@ -22,3 +22,15 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
+
+
+//Send Message button actions
+var form = document.querySelector("#contactForm form");
+form.onsubmit = function(){
+    //get Firstname
+    var firstname = document.getElementsByName("firstName")[0].value;
+    //display a short message
+    var text = "<div><p>Dear " + firstname + "!</p><p>Thank you for your message. We will contact you as soon as possible.</p></div>"
+    //form must disappear
+    document.querySelector("#contactForm").innerHTML = text;
+}

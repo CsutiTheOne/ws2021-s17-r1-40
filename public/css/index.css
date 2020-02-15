@@ -62,7 +62,7 @@ body {
     z-index: 0;
 }
 
-/* header area */
+/* ___header area___ */
 .fakeBackground {
     position: fixed;
     z-index: 99;
@@ -118,7 +118,7 @@ nav.navbar {
         margin-top: -10px;
     }
 }
-/* banner area */
+/* ___banner area___ */
 .banner {
     min-height: 100px;
     max-height: 600px;
@@ -151,7 +151,7 @@ nav.navbar {
     text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.5);
 }
-/* actual content */
+/* ___actual content___ */
 #actualContent {
     padding-top: 20vh;
 }
@@ -162,12 +162,26 @@ nav.navbar {
     font-size: 34px;
     color: var(--green);
 }
+/* Environment part */
 .btn.bg-greenDark:active {
     background-color: var(--greenLight) !important;
 }
+#environmentImage {
+    
+}
+#environmentImage span {
+    /* triangle thing */
+    position: absolute;
+    top: 45%;
+    left: 0;
+    border: 30px solid rgba(0,0,0,0);
+    border-left: 30px solid white;
+    
+}
 /* Gallery part */
 .images {
-    height: 200px;
+    min-height: 200px;
+    border-radius: 5%;
 }
 .image {
     object-fit: cover;
@@ -183,8 +197,8 @@ nav.navbar {
 .image:hover {
     width: 105%;
     height: 105%;
-    top: -2.5%
-    left: -2.5%
+    top: -2.5%;
+    left: -2.5%;
     z-index: 997;
 }
 /* gallery modals */
@@ -227,8 +241,7 @@ nav.navbar {
     font-weight: bold;
     transition: 0.3s;
 }
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: var(--white) !important;
     text-decoration: none;
     cursor: pointer;
@@ -238,6 +251,13 @@ nav.navbar {
     .modal-content {
         width: 100%;
     }
+}
+/* map part */
+.zoom {
+    font-size: 5rem;
+    position: absolute;
+    right: 5%;
+    bottom: 5px;
 }
 
 /* trash but may use later

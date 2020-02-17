@@ -68,6 +68,12 @@ var scrollSpy = {
     }
 };
 
+//fill up gallery
+var gallery = document.querySelector(".images");
+for(var i = 1; i <= 12; i++){
+    var num = i < 10 ? "0" + i : i;
+    gallery.innerHTML += '<div class="col-12 col-md-3"><img src="public/img/shanghai_park_' + num +'.jpg" class="img-fluid p-2 image"></div>';
+}
 //Image modal in GALLERY
 // Get the modal
 var modal = document.getElementById("galleryModal");
@@ -214,7 +220,4 @@ document.querySelector('[data-target="#flatSelection"]').addEventListener("click
 
 window.onload = function(){
     scrollSpy.init();
-    
-    
-    //console.log(flats);
 }

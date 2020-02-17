@@ -95,7 +95,50 @@
                         <h1>Flats</h1>
                         <p>Every flat in Citizen Park has been designed with future residents' needs in mind so all of them are practical and can be furnished easily.</p>
                         <p>Choose your dream flat now!</p>
-                        <button class="btn btn-md bg-greenDark white">Check the flats </button>
+                        <button class="btn btn-md bg-greenDark white" data-toggle="modal" data-target="#flatSelection">Check the flats </button>
+                    </div>
+                    <!-- flat selection modal -->
+                    <div class="modal fade " id="flatSelection" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body container-fluid">
+                                    <div class="row">
+                                        <h5 id="floorDisplay">Floor:<span></span></h5>
+                                        <div>
+                                            <img src="public/img/shanghai_park_building.png" width="100%" height="auto" class="img-fluid" usemap="#floorMap"></img>
+                                            <map name="floorMap" id="floorMap">
+                                                <!-- coords = top,left,bottom,right 330-->
+                                                <area shape="poly" coords="190,5, 840,120, 850,145, 190, 50" alt="Sun" onclick="console.log('hello')">
+                                            </map>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <table class="table table-bordered" id="flats">
+                                            <thead>
+                                                <tr>
+                                                    <th>Flat number</th>
+                                                    <th>Number of rooms</th>
+                                                    <th>Netto Area</th>
+                                                    <th>Brutto Area</th>
+                                                    <th>Orientation</th>
+                                                    <th>Price</th>
+                                                </tr>        
+                                            </thead>
+                                            <tbody>
+                                                
+                                            </tbody>
+                                        </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -173,11 +216,11 @@
                 </div>
             </div>
             <!-- Modal -->
-            <div id="galleryModal" class="modal">
+            <div id="galleryModal" class="imgModal">
                 <!-- The Close Button -->
-                <span class="close">&times;</span>
+                <span class="imgClose">&times;</span>
                 <!-- Modal Content (The Image) -->
-                <img class="modal-content" id="modalImage">
+                <img class="imgModal-content" id="modalImage">
             </div>
         </div>
         <!-- contact -->
@@ -252,7 +295,6 @@
                 </div>
             </div>
         </div>
-        
         <!-- own javascript -->
         <script type="text/javascript" src="public/js/index.js"></script>
     </body>

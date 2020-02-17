@@ -8,7 +8,7 @@ function makeActive(element){
     //make the new active
     element.classList.add("active");
 }
-//make navbar scrolling correct
+//make navbar link scrolling to correct position
 document.querySelectorAll(".nav-item").forEach(function(element, index){
     element.onclick = function(){
         return false;
@@ -17,17 +17,14 @@ document.querySelectorAll(".nav-item").forEach(function(element, index){
         //find clicked element
         var target = e.target || e.srcElement;
         var href = target.getAttribute("href"); //we also need its href
-        
         //make clicked element the active one
         makeActive(document.querySelector("[href='" + href +"']").parentElement);
-        
         //scroll to clicked
         document.querySelector(href).scrollIntoView();
         //scroll a bit down due to fixed navbar
         window.scrollBy(0, -100);
     });
 });
-
 //scrollspy
 //I made this scrollSpy so separated I had to organise into an object
 var scrollSpy = {
@@ -87,7 +84,7 @@ images.forEach(function(element, index){
     });
 });
 // model close button
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("imgClose")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -105,6 +102,44 @@ form.onsubmit = function(){
     document.querySelector("#contactForm").innerHTML = text;
 }
 
+
+
+//___Flat selection part___
+//load in
+var flats;
+var http = new XMLHttpRequest();
+http.open( "GET", "public/data/shanghai_park_flats.json", true);
+http.onreadystatechange = function () {
+    if(http.readyState == 4 && http.status == 200) {
+        flats = JSON.parse(http.responseText);
+    }
+}
+http.send();
+
+//render floorSelector
+function renderFloors(flats) {
+    var floors = document.getElementById("floorSelector"),
+        length = Object.keys(flats).length
+    for(var index in flats){
+        floors.innerHTML += '<div class="floor" id="floor-' + index + '"></div>';
+        document.querySelector("#floor-" + index).style.height = (100 / length) + "%";
+    }
+}
+renderFloors(flats);
+
 window.onload = function(){
     scrollSpy.init();
 }
+
+
+//map zooming is on
+//so, we need a map
+var map = document.getElementById("map");
+var mapSrc = map.getAttribute("src");
+
+//There are 3 possibla src conditions
+//+, -, none
+//zoom in completely
+map.src = "public/img/shanghai_park_map+.png";
+//hide the zoom button
+

@@ -193,7 +193,7 @@ area {
     height: 400px;
     background-position: -100px 0;
     background-repeat: no-repeat;
-    background-size: 120% auto;
+    background-size: auto 120%;
 }
 .floor:hover {
     background-color: var(--greenLight);

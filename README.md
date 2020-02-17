@@ -9,4 +9,6 @@ https://sleepy-shockley-793623.netlify.com/
 2. Scrollspy may work incorrect in mobile view
 
 > "It works on my machine."
+> "It's just some unlocky coincidance."
+> "It works, but it haven't been tested."
 > /any developper/

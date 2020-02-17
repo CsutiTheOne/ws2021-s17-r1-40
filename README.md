@@ -5,8 +5,8 @@ Netlify url:
 https://sleepy-shockley-793623.netlify.com/
 
 #Known issues:
--Floor selection looks ugly, but that's all I can do :c
--Scrollspy may work incorrect in mobile view.
+##-Floor selection looks ugly, but that's all I can do :c
+##-Scrollspy may work incorrect in mobile view.
 
 
 
@@ -45,4 +45,4 @@ https://sleepy-shockley-793623.netlify.com/
 
 
 
-It works on my machine.
+####It works on my machine.

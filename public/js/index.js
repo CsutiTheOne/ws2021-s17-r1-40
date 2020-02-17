@@ -67,7 +67,6 @@ var scrollSpy = {
         });
     }
 };
-
 //fill up gallery
 var gallery = document.querySelector(".images");
 for(var i = 1; i <= 12; i++){

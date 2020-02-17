@@ -102,9 +102,41 @@ form.onsubmit = function(){
     document.querySelector("#contactForm").innerHTML = text;
 }
 
+//react to clicks
+var buttons = document.querySelectorAll(".zoom button");
+buttons.forEach(function(element, index) {
+    element.addEventListener("click", function(e){
+        //so, we need a map
+        var map = document.querySelector("#map img");
+        var mapSrc = map.getAttribute("src");
+        //there are 3 possible outcomes
+        //when we press the + on middle case
+        if(this.id === "plusBtn" && mapSrc.indexOf("-") == -1) {
+            //zoom in completely
+            map.src = "public/img/shanghai_park_map+.png";
+            //show only - button
+            document.getElementById("plusBtn").style.visibility = "hidden";
+            console.log("its + case");
+        } 
+        //when we press the - button on middle case
+        else if(this.id === "minusBtn" && mapSrc.indexOf("+") == -1) {
+            //zoom out completely
+            map.src = "public/img/shanghai_park_map-.png";
+            //show only + button
+            document.getElementById("minusBtn").style.visibility = "hidden";
+            console.log("its - case");
+        } else {
+            console.log("its mid case");
+            //middle case
+            map.src = "public/img/shanghai_park_map.png";
+            //show both buttons
+            document.getElementById("plusBtn").style.visibility = "visible";
+            document.getElementById("minusBtn").style.visibility = "visible";
+        }
+    });
+});
 
-
-//___Flat selection part___
+//___Flat selection part___ yes, it is not working right nowgit
 //load in
 var flats;
 var http = new XMLHttpRequest();
@@ -125,21 +157,8 @@ function renderFloors(flats) {
         document.querySelector("#floor-" + index).style.height = (100 / length) + "%";
     }
 }
-renderFloors(flats);
+
 
 window.onload = function(){
     scrollSpy.init();
 }
-
-
-//map zooming is on
-//so, we need a map
-var map = document.getElementById("map");
-var mapSrc = map.getAttribute("src");
-
-//There are 3 possibla src conditions
-//+, -, none
-//zoom in completely
-map.src = "public/img/shanghai_park_map+.png";
-//hide the zoom button
-

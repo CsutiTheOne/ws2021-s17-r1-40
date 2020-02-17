@@ -278,7 +278,6 @@ area {
 }
 /* map part */
 .zoom {
-    font-size: 5rem;
     position: absolute;
     right: 5%;
     bottom: 5px;

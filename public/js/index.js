@@ -136,29 +136,85 @@ buttons.forEach(function(element, index) {
     });
 });
 
+
+
 //___Flat selection part___ yes, it is not working right nowgit
+//render floorSelector
+function renderFloors(flats) {
+    var floors = document.getElementById("floorSelection"),
+        length = Object.keys(flats).length
+    //render
+    for(var index in flats){
+        //append
+        floors.innerHTML += '<div class="floor" id="floor-' + (length-1 - index) + '"></div>';
+        //check current element
+        var current = document.querySelector("#floor-" + (length-1 - index));
+        current.style.height = (100 / length) + "%";
+        if(length-1-index == 0) {
+            current.classList.add("active");
+            document.querySelector("#floorDisplay").innerHTML = current.id;
+            renderTable(flats[0]);
+        }
+    }
+    //add event listeners to all
+    document.querySelectorAll(".floor").forEach(function(element, index){
+        element.addEventListener("click", function(e){
+            //show selected floor as avtive one and unactivate the old
+            document.querySelector(".floor.active").classList.remove("active");
+            this.classList.add("active");
+            //display the floor in text
+            document.querySelector("#floorDisplay").innerHTML = this.id;
+            //render the table of the selected floor
+            var floor = this.id.slice(this.id.indexOf("-")+1, this.id.length);
+            renderTable(flats[floor]);
+        });
+    });
+}
+//render the talbe with json's data
+function renderTable(floor){
+    var table = "";
+    //var needed = [rooms, net_area, sales_area, price_eur];
+    //define the table
+    Object.keys(floor).map(function(objectKey, index) {
+        var value = floor[objectKey];
+        var row = "";
+        row = row.concat("<tr>", 
+            "<td>" + objectKey + "</td>",
+            "<td>" + value.rooms + "</td>",
+            "<td>" + value.net_area + " m<sup>2</sup></td>",
+            "<td>" + value.sales_area + " m<sup>2</sup></td>",
+            "<td>" + value.orientation + "</td>",
+            "<td>" + value.price_eur + " €</td>",
+        "</tr>");
+        table += row;
+    });
+    //append the table's body
+    document.querySelector("#flats tbody").innerHTML = table;
+}
+
+
 //load in
-var flats;
+var first = true;
+var flatsData;
 var http = new XMLHttpRequest();
 http.open( "GET", "public/data/shanghai_park_flats.json", true);
 http.onreadystatechange = function () {
     if(http.readyState == 4 && http.status == 200) {
-        flats = JSON.parse(http.responseText);
+        flatsData = JSON.parse(http.responseText);
     }
 }
 http.send();
-
-//render floorSelector
-function renderFloors(flats) {
-    var floors = document.getElementById("floorSelector"),
-        length = Object.keys(flats).length
-    for(var index in flats){
-        floors.innerHTML += '<div class="floor" id="floor-' + index + '"></div>';
-        document.querySelector("#floor-" + index).style.height = (100 / length) + "%";
+function firstClick(){
+    if(first){
+        first = false;
+        renderFloors(flatsData);
     }
 }
-
+document.querySelector('[data-target="#flatSelection"]').addEventListener("click", firstClick);
 
 window.onload = function(){
     scrollSpy.init();
+    
+    
+    //console.log(flats);
 }

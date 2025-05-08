@@ -2,7 +2,7 @@
 Competition project for WorldSkills2021 Shanghai. 
 
 Netlify url: 
-https://sleepy-shockley-793623.netlify.com/
+https://sleepy-shockley-793623.netlify.app/
 
 ## Known issues.
 1. Floor selection looks ugly, but that's all I can do :c
